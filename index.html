@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mystery Pet</title>
+  <style>
+    body { text-align: center; margin-top: 50px; background: lightyellow; font-family: sans-serif; }
+    h1 { color: black; }
+    button { padding: 10px 20px; font-size: 16px; background: tomato; color: white; border: none; border-radius: 5px; }
+    button:hover { background: red; }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">🐾 Click Me!</h1>
+  <button onclick="doMagic()">Do Something</button>
+
+  <script>
+    function doMagic() {
+      var title = document.getElementById("title");
+      title.textContent = "✨ Done!";
+      document.body.style.background = "skyblue";
+      title.style.color = "white";
+
+      var surprise = document.getElementById("surprise");
+      if (!surprise) {
+        var p = document.createElement("p");
+        p.id = "surprise";
+        p.textContent = "🎉 Surprise!";
+        p.style.color = "lightyellow";
+        document.body.appendChild(p);
+      } else {
+        surprise.remove();
+      }
+    }
+  </script>
+
+</body>
+</html>
+
